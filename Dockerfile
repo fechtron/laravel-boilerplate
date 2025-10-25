@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_sqlite pdo_mysql mbstring exif pcntl bcmath gd zip
 
+# install and enable xdebug
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 # Install Composer
 COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
 

@@ -13,8 +13,16 @@ services:
       - ./app:/var/www/html
       - ./app/storage:/var/www/html/storage
       - ./app/database:/var/www/html/database
+      - ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     ports:
-      - 9000:9000
+      - "9000:9000"   # se PHP-FPM estiver nesta porta (opcional)
+      - "9003:9003"   # porta Xdebug (expõe para host)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_CLIENT_HOST: host.docker.internal
+      XDEBUG_CLIENT_PORT: 9003
 
   nginx:
     image: nginx:latest
