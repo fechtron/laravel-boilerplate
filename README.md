@@ -95,3 +95,9 @@ you should see: "With XDebug..."
 }
 
 ```
+
+
+listen EADDRINUSE:address already in use 9003
+sudo lsof -i :9003
+sudo kill -9 <PID>
+
