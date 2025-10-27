@@ -101,3 +101,16 @@ listen EADDRINUSE:address already in use 9003
 sudo lsof -i :9003
 sudo kill -9 <PID>
 
+---
+
+# Autenticação
+
+## Breeze
+Cria toda uma estrutura básica de autenticação, com tela de login, registro e inclusive um dashboard.
+É muito bom se quer rapidez e algo pronto, mas é ruim se quiser alterar o layouts das páginas.
+
+## Fortify
+É uma implementação de backend para autenticação.
+É agnóstica em relação ao frondend. Pode criar para qualquer layout.
+Permite criar rapidamente as lógicas de login, logout, password reset, verificação de e-mail, 2FA, atualização de perfil etc.
+
