@@ -26,6 +26,13 @@ docker-compose up -d
 
 sleep 5
 sudo chown -R $USER:$USER .
+
+echo "Copiando o script de criação de novas branches"
+docker cp new-branch.sh app:/var/www/html/new-branch.sh
+docker-compose exec app chmod +x new-branch.sh
+docker-compose exec app ./new-branch.sh
+
+echo "Copiando o arquivo de configurações"
 docker cp config.sh app:/var/www/html/config.sh
 docker-compose exec app chmod +x config.sh
 docker-compose exec app ./config.sh

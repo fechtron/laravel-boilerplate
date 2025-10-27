@@ -1,4 +1,4 @@
-#!/bin/bar
+#!/bin/bash
 
 if [ -z "$1" ]; then
     echo "Error: No branch name provided."
