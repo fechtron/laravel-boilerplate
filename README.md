@@ -12,6 +12,9 @@ Run on project root folder:
 `sudo chmod -R 777 ./app`
 
 
+sudo chown -R $USER:$USER .
+
+
 # Add XDEBUG
 
 - create:
@@ -114,3 +117,8 @@ Cria toda uma estrutura básica de autenticação, com tela de login, registro e
 É agnóstica em relação ao frondend. Pode criar para qualquer layout.
 Permite criar rapidamente as lógicas de login, logout, password reset, verificação de e-mail, 2FA, atualização de perfil etc.
 
+---
+
+# Email
+
+php artisan make:mail NewUserConfirmation
