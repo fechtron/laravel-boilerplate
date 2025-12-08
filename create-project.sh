@@ -28,6 +28,8 @@ docker cp .env.example app:/var/www/html/.env
 docker exec app chown -R www-data:www-data /var/www/html
 docker exec app chmod -R 777 /var/www/html
 
+docker exec app composer update
+
 docker exec app php artisan optimize:clear
 
 echo "Criando a chave de criptografia do Laravel"
