@@ -122,3 +122,54 @@ Permite criar rapidamente as lógicas de login, logout, password reset, verifica
 # Email
 
 php artisan make:mail NewUserConfirmation
+
+
+--- 
+
+# Aula 11
+Exemplo com breeze
+
+
+Your Composer dependencies require a PHP version ">= 8.4.0". You are running 8.2.29. in
+
+No composer lock substituir
+"php": ">=8.4"
+
+por 
+"php": ">=8.2"
+
+---
+
+Instalar o breeze
+composer require laravel/breeze --dev
+php artisan breeze:install
+
+
+Instalar e rodar npm
+apt-get install npm
+npm install
+
+atualizar vite.config.js para:
+```
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+
+export default defineConfig({
+    server: {
+        host: true,
+        port: 5173,
+        strictPort: true,
+    },
+    plugins: [
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+        }),
+    ],
+});
+```
+
+npm run dev
+
+acessar: http://172.19.0.3:5173/
+
